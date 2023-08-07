@@ -1,0 +1,38 @@
+{
+  "name": "use-driver",
+  "version": "1.0.0",
+  "description": "Driver.js plugin for React.js",
+  "author": "Nejdet Kadir Bektaş",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "keywords": [
+    "driver.js",
+    "driver",
+    "driverjs",
+    "use-driver"
+  ],
+  "files": [
+    "dist",
+    "LICENSE",
+    "README.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nejdetkadir/use-driver.git"
+  },
+  "scripts": {
+    "build": "tsup ./src/index.ts --format cjs,esm --dts",
+    "lint": "tsc"
+  },
+  "dependencies": {
+    "driver.js": "^1.2.1",
+    "react": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.18",
+    "tsup": "^7.2.0",
+    "typescript": "^5.1.6"
+  }
+}
