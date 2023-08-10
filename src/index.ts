@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+
 import { driver } from "driver.js";
 import type {
   Config,
@@ -8,7 +9,7 @@ import type {
 
 type UseDriverStepType = DriveStepType & { order?: number };
 
-export const useDriver = (defaultConfig?: Config) => {
+export default function useDriver(defaultConfig?: Config) {
   const [currentDriver, setCurrentDriver] = useState<DriverType | null>(null);
   const [steps, setSteps] = useState<UseDriverStepType[]>([]);
 
@@ -36,9 +37,8 @@ export const useDriver = (defaultConfig?: Config) => {
           (a: UseDriverStepType, b: UseDriverStepType) => a.order! - b.order!
         )
       );
+
       currentDriver.drive();
-    } else {
-      console.warn("Driver was not initialized");
     }
   };
 
@@ -63,9 +63,9 @@ export const useDriver = (defaultConfig?: Config) => {
 
   return {
     register,
+    drive,
     ...{
       isActive: () => currentDriver?.isActive(),
-      drive,
       reset: () => currentDriver?.destroy(),
       refresh: () => currentDriver?.refresh(),
       getConfig: () => currentDriver?.getConfig(),
@@ -88,4 +88,4 @@ export const useDriver = (defaultConfig?: Config) => {
       destroy: () => currentDriver?.destroy(),
     },
   };
-};
+}

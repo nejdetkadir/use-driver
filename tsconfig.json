@@ -1,5 +1,5 @@
 {
-  "include": ["src"],
+  "include": ["src/**/*.tsx", "src/**/*.ts", "src/**/*.css"],
   "exclude": [
     "dist",
     "node_modules"
