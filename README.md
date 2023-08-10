@@ -1,3 +1,5 @@
+[![npm version](https://badge.fury.io/js/use-driver.svg)](https://badge.fury.io/js/use-driver)
+
 # use-driver
 
 ![cover](docs/cover.gif)
